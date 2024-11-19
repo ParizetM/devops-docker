@@ -1,0 +1,33 @@
+name: devops
+
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    networks:
+      - devops-compose
+    environment:
+      - "POSTGRES_PASSWORD=Not24get"
+      - "POSTGRES_DB=devops"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  app:
+    image: php-devops:4.0
+    ports:
+      - "9501:8080"
+    networks:
+      - devops-compose
+    volumes:
+      - ./.env:/app/.env
+
+
+
+  
+
+volumes:
+  postgres-data:
+
+
+networks:
+  devops-compose:
