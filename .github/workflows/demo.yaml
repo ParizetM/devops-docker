@@ -18,3 +18,8 @@ jobs:
           echo "voici"
           echo "un script"
           echo "plus complexe"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      name: "Test" 
+      run: echo "Test"
