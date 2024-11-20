@@ -43,6 +43,13 @@ jobs:
         run: vendor/bin/phpunit
         working-directory: ./app
 
+      - name: scan sonarqube
+        run: sonar-scanner \
+          -Dsonar.projectKey=github \
+          -Dsonar.sources=. \
+          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
   build:
     needs: tests
     runs-on: self-hosted
