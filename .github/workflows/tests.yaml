@@ -45,11 +45,11 @@ jobs:
 
       - name: scan sonarqube
         run: |
-          -sonar-scanner \
-          -Dsonar.projectKey=github \
-          -Dsonar.sources=. \
-          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          sonar-scanner \
+            -Dsonar.projectKey=github \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           
       - name: "SonarQube Quality Gate"
         uses: sonarsource/sonarqube-quality-gate-action@master
