@@ -44,6 +44,7 @@ jobs:
         working-directory: ./app
 
   build:
+    needs: tests
     runs-on: self-hosted
 
     steps:
