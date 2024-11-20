@@ -44,7 +44,8 @@ jobs:
         working-directory: ./app
 
       - name: scan sonarqube
-        run: sonar-scanner \
+        run: |
+          -sonar-scanner \
           -Dsonar.projectKey=github \
           -Dsonar.sources=. \
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
