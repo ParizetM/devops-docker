@@ -47,6 +47,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: "setup docker"
         uses: docker/setup-qemu-action@v3
 
@@ -62,7 +65,7 @@ jobs:
       - name: "build and push"
         uses: docker/build-push-action@v3
         with:
-          context: ./
+          context: .
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_TAG}}
