@@ -1,0 +1,14 @@
+name: "demon pipeline CI"
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demo:
+    name: "Demo son nom"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Premiere étape"
+        run: echo "Hello world"
