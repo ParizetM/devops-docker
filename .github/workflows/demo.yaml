@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: "Premiere étape"
         run: echo "Hello world"
-      
+
       - name: "Script plus complexe"
         run: |
           echo "voici"
@@ -21,5 +21,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: "Test" 
-      - run: echo "Test"
+      name: "Test-step"
+      run: echo "Test"
