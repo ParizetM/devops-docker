@@ -22,4 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Test-step"
-        run: echo "Test"
+        uses: actions/checkout@v4
+
+      - name: "Test-step-2"
+        run: echo "Hello world"
