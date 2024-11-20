@@ -12,3 +12,9 @@ jobs:
     steps:
       - name: "Premiere étape"
         run: echo "Hello world"
+      
+      - name: "Script plus complexe"
+        run: |
+          echo "voici"
+          echo "un script"
+          echo "plus complexe"
